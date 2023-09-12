@@ -78,13 +78,9 @@ class ContactController {
   async delete(request, response) {
     const { id } = request.params;
 
-    const contact = await ContactsRepository.findById(id);
+    await ContactsRepository.delete(id);
 
-    if (!contact) {
-      return response.status(404).json({ message: 'contact not found' });
-    }
-
-    response.json({ message: 'contact deleted' });
+    response.status(204).json({ message: 'contact deleted' });
   }
 }
 

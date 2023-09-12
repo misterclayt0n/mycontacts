@@ -1,23 +1,4 @@
-const { v4: uuidv4 } = require('uuid');
-
 const db = require('../../database/index');
-
-let contacts = [
-  {
-    id: uuidv4(),
-    name: 'clayton',
-    email: 'daviarantes13@gmail.com',
-    phone: '123123123',
-    category_id: uuidv4(),
-  },
-  {
-    id: uuidv4(),
-    name: 'rodolfo',
-    email: 'arantes.dr@gmail.com',
-    phone: '123123123',
-    category_id: uuidv4(),
-  },
-];
 
 class ContactsRepository {
   async findAll(orderBy = 'ASC') {
@@ -36,11 +17,10 @@ class ContactsRepository {
     return rows;
   }
 
-  delete(id) {
-    return new Promise((resolve) => {
-      contacts = contacts.filter((contact) => contact.id !== id);
-      resolve(contacts);
-    });
+  async delete(id) {
+    const deleteOp = await db.query('DELETE FROM contacts WHERE id = $1', [id]);
+    // estamos usando deleteOp ao invés de row pq essa operação sql vai retornar um array vazio
+    return deleteOp;
   }
 
   async create({
