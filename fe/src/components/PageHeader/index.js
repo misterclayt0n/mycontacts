@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Container } from './styles';
 import arrow from '../../assets/images/icons/arrow.svg';
