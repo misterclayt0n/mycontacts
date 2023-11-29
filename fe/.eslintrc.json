@@ -13,6 +13,8 @@
     "react/react-in-jsx-scope": "off",
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
-    "react/no-render-return-value": "off"
+    "react/no-render-return-value": "off",
+    "no-console": "off",
+    "react/jsx-no-bind": "off"
   }
 }
