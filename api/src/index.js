@@ -1,7 +1,7 @@
-const express = require('express');
-require('express-async-errors');
+const express = require("express");
+require("express-async-errors");
 
-const routes = require('./routes');
+const routes = require("./routes");
 
 const app = express();
 
@@ -12,4 +12,6 @@ app.use((error, request, response, next) => {
   response.sendStatus(500);
 });
 
-app.listen(3000, () => console.log('sevidor iniciado em http://localhost:3000'));
+app.listen(3000, () =>
+  console.log("sevidor iniciado em http://localhost:3000"),
+);
