@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import { useEffect, useState } from 'react';
+
 import {
   Container,
   InputSearchContainer,
@@ -14,6 +16,21 @@ import trash from '../../assets/images/icons/trash.svg';
 // import Modal from '../../components/Modal';
 
 export default function Home() {
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/contacts')
+      .then(async (response) => {
+        const json = await response.json();
+        setContacts(json);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  console.log(contacts);
+
   return (
     <Container>
       {/* <Loader /> */}
@@ -57,7 +74,3 @@ export default function Home() {
     </Container>
   );
 }
-
-fetch('http://localhost:3001/contacts', { method: 'DELETE' })
-  .then((response) => console.log(response))
-  .catch((error) => console.log(error));

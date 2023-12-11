@@ -19,7 +19,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
   },
-  plugins: ['prettier'],
+  plugins: [],
   rules: {
     'prettier/prettier': 'error',
     'class-methods-use-this': 'off',
