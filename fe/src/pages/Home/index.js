@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 
 import {
-  Container, InputSearchContainer, Header, ListContainer, Card,
+  Container,
+  InputSearchContainer,
+  Header,
+  ListContainer,
+  Card,
 } from './styles';
 import arrow from '../../assets/images/icons/arrow.svg';
 import edit from '../../assets/images/icons/edit.svg';
@@ -53,3 +57,7 @@ export default function Home() {
     </Container>
   );
 }
+
+fetch('http://localhost:3001/contacts', { method: 'DELETE' })
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));

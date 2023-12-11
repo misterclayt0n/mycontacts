@@ -18,7 +18,7 @@ export const InputSearchContainer = styled.div`
     padding: 0 16px;
 
     &::placeholder {
-      color: #BCBCBC;
+      color: #bcbcbc;
     }
   }
 `;
@@ -67,11 +67,10 @@ export const ListContainer = styled.div`
       }
     }
   }
-
 `;
 
 export const Card = styled.div`
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
   padding: 16px;
   border-radius: 4px;
@@ -80,7 +79,7 @@ export const Card = styled.div`
   justify-content: space-between;
 
   & + & {
-    margin-top: 16px
+    margin-top: 16px;
   }
 
   .info {

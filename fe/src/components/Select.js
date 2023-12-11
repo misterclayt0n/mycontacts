@@ -14,6 +14,6 @@ export default styled.select`
   appearance: none;
 
   &:focus {
-    border-color: ${({ theme }) => theme.colors.primary.main}
+    border-color: ${({ theme }) => theme.colors.primary.main};
   }
 `;

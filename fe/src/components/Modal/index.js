@@ -13,8 +13,12 @@ export default function Modal({ danger }) {
         <p>Corpo do Modal</p>
 
         <Footer>
-          <button type="button" className="cancel-button">Cancelar</button>
-          <Button type="button" danger={danger}>Deletar</Button>
+          <button type="button" className="cancel-button">
+            Cancelar
+          </button>
+          <Button type="button" danger={danger}>
+            Deletar
+          </Button>
         </Footer>
       </Container>
     </Overlay>,
