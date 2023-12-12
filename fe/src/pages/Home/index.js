@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 import {
   Container,
@@ -20,9 +20,11 @@ export default function Home() {
   const [orderBy, setOrderBy] = useState('asc');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const filteredContacts = contacts.filter((contact) =>
-    contact.name.toLowerCase().startsWith(searchTerm.toLowerCase()),
-  );
+  const filteredContacts = useMemo(() => {
+    return contacts.filter((contact) =>
+      contact.name.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
+  }, [contacts, searchTerm]);
 
   const hello = 'hello world';
   console.log(hello);
