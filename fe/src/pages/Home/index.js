@@ -24,6 +24,9 @@ export default function Home() {
     contact.name.toLowerCase().startsWith(searchTerm.toLowerCase()),
   );
 
+  const hello = 'hello world';
+  console.log(hello);
+
   useEffect(() => {
     fetch(`http://localhost:3001/contacts?orderBy=${orderBy}`)
       .then(async (response) => {
