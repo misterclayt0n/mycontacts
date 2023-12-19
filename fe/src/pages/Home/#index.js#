@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { useEffect, useState, useMemo } from 'react';
-
-import {
-  Container,
+import {Container,
   InputSearchContainer,
   Header,
   ListHeader,
@@ -36,9 +34,8 @@ export default function Home() {
 
         const contactsList = await ContactsService.listContacts(orderBy);
 
-        setContacts(contactsList);
-      } catch (error) {
-        console.log(`caiu no catch: ${error}`);
+        setContacts(contactsList);} catch (error) {
+        console.log(error);
       } finally {
         setIsLoading(false);
       }

@@ -13,5 +13,5 @@ app.use(routes);
 app.use(errorHandler);
 
 app.listen(3001, () =>
-  console.log('sevidor iniciado em http://localhost:3001'),
+  console.log('servidor iniciado em http://localhost:3001'),
 );
