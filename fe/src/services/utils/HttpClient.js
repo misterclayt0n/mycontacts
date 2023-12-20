@@ -10,11 +10,20 @@ class HttpCLient {
 
     const response = await fetch(`${this.baseURL}${path}`);
 
-    if (response.ok) {
-      return response.json();
+    let body = null;
+
+    const contentType = response.headers.get('Content-Type');
+
+    if (contentType.includes('application/json')) {
+      body = await response.json();
     }
 
-    throw new Error('erro na api');
+    if (response.ok) {
+      return body;
+    }
+
+    // optional chaining
+    throw new Error(body?.error || `${response.status - response.statusText}`);
   }
 }
 
