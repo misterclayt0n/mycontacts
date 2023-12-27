@@ -1,4 +1,5 @@
 import delay from '../../utils/delay';
+import APIError from '../../errors/APIError';
 
 class HttpCLient {
   constructor(baseURL) {
@@ -22,8 +23,7 @@ class HttpCLient {
       return body;
     }
 
-    // optional chaining
-    throw new Error(body?.error || `${response.status - response.statusText}`);
+    throw new APIError(response, body);
   }
 }
 

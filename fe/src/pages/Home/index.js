@@ -13,6 +13,7 @@ import arrow from '../../assets/images/icons/arrow.svg';
 import edit from '../../assets/images/icons/edit.svg';
 import trash from '../../assets/images/icons/trash.svg';
 import Loader from '../../components/Loader';
+// import APIError from '../../errors/APIError';
 
 import ContactsService from '../../services/ContactsService';
 // import Modal from '../../components/Modal';
@@ -38,7 +39,8 @@ export default function Home() {
 
         setContacts(contactsList);
       } catch (error) {
-        console.log(`caiu no catch: ${error}`);
+        console.log(error);
+        console.log('response: ', error.response);
       } finally {
         setIsLoading(false);
       }
