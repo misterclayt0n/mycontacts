@@ -42,7 +42,7 @@ class ContactController {
       category_id,
     });
 
-    response.status(201).json(contacts);
+    response.status(201).json(contact);
   }
 
   async update(request, response) {
