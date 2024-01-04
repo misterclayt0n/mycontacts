@@ -6,7 +6,7 @@ import { Container } from './styles';
 import Header from '../Header';
 // import ContactsList from '../ContactsList';
 import Routes from '../../Routes';
-import ToastContainer from '../Toast/ToasContainer';
+import ToastContainer from '../Toast/ToastContainer';
 
 function App() {
   return (
