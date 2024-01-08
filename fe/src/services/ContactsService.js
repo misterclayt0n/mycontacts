@@ -5,15 +5,15 @@ class ContactService {
     this.HttpClient = new HttpClient('http://localhost:3001');
   }
 
-  async listContacts(orderBy = 'asc') {
-    return this.HttpClient.get(`/contacts?orderBy=${orderBy}`, {
-      headers: {
-        Authorization: 'meutoken',
-      },
-    });
+  listContacts(orderBy = 'asc') {
+    return this.HttpClient.get(`/contacts?orderBy=${orderBy}`);
   }
 
-  async createContact(contacts) {
+  getContactById(id) {
+    return this.HttpClient.get(`/contacts/${id}`);
+  }
+
+  createContact(contacts) {
     return this.HttpClient.post(`/contacts`, { body: contacts });
   }
 }
